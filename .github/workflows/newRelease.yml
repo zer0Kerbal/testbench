@@ -17,5 +17,4 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          templateName: migration-project-template
-          # templateName: ${{ github.event.inputs.template }}
+          templateName: ${{ github.event.inputs.template }}
