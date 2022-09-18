@@ -1,4 +1,4 @@
-name: Test
+name: NewRelease
 
 on:
   workflow_dispatch:
@@ -12,9 +12,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - run: npm install @octokit/action
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          templateName: ${{ github.event.inputs.template }}
+          templateName: migration-project-template
+          # templateName: ${{ github.event.inputs.template }}
