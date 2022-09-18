@@ -235,14 +235,14 @@ milestones:
     description: progress toward 1.0.99.5-prerelease
     state: open
 
+  - title: Localization - English <en-us.cfg>
+    description: progress toward English <en-us.cfg> localization
+    state: open
+
   - title: Localization - Master
     description: progress toward total localization
     state: open
 
   - title: Localization - Parts
     description: progress toward Parts localization (only for parts, patches, agencies - etc)
-    state: open
-
-  - title: Localization - English <en-us.cfg>
-    description: progress toward English <en-us.cfg> localization
     state: open
