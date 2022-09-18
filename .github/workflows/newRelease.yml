@@ -1,3 +1,10 @@
+# NewRelease 1.0.0.0
+# created: 15 Sep 2022
+# updated: 
+# GitHub action to create Project Boards from template Yaml files.
+# This Action creates a Project Board with pre-populated Issues, based on Issue-Templates.
+# https://github.com/jefeish/project-template-action
+
 name: NewRelease
 
 on:
