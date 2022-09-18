@@ -19,13 +19,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-      - name: action
-        run: npm install @octokit/action
-        uses: ./
+      - uses: actions/checkout@v2
+      - run: npm install @octokit/action
+      - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           templateName: ${{ github.event.inputs.template }}
