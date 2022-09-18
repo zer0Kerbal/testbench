@@ -1,0 +1,31 @@
+# NewRelease 1.0.0.0
+# created: 15 Sep 2022
+# updated: 
+# GitHub action to create Project Boards from template Yaml files.
+# This Action creates a Project Board with pre-populated Issues, based on Issue-Templates.
+# https://github.com/jefeish/project-template-action
+
+name: Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      template:
+        type: string
+        description: template (.github/PROJECT_TEMPLATES/)
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: action
+        run: npm install @octokit/action
+        uses: ./
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          templateName: ${{ github.event.inputs.template }}
