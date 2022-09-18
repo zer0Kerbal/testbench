@@ -19,8 +19,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # Check out code using git
+      - uses: actions/checkout@v3
+      # Install Node 12
+      - uses: actions/setup-node@v1
+        with:
+          version: 12
       - run: npm install @octokit/action
+      # - run: npm install @octokit/action
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
